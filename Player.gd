@@ -52,4 +52,4 @@ func start(pos):
 	position = pos
 	show()
 	monitoring = true
-	
+	#monitorable testen
