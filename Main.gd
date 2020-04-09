@@ -11,7 +11,7 @@ func new_game():
 	score = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
-	$HUD.show_message("Get Ready")
+	$HUD.show_message("5 seconds\nto the field!")
 	$HUD.update_score(score)
 	$ThemeSong.play()
 

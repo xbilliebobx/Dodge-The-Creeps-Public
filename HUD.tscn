@@ -45,12 +45,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -200.0
-margin_top = -50.0
+margin_top = -120.0
 margin_right = 200.0
-margin_bottom = 27.0
+margin_bottom = 120.0
 custom_fonts/font = SubResource( 3 )
-text = "Dodge The 
-Creeps"
+text = "Morning
+meeting
+is over!"
 align = 1
 valign = 1
 __meta__ = {
@@ -62,18 +63,19 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -100.0
-margin_top = -200.0
-margin_right = 100.0
+margin_left = -114.0
+margin_top = -150.0
+margin_right = 114.0
 margin_bottom = -100.0
 custom_fonts/font = SubResource( 5 )
-text = "Start"
+text = "Let's go"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MessageTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 4.0
 one_shot = true
+[connection signal="pressed" from="StartButton" to="." method="show_label"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]

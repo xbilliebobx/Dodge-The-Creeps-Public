@@ -24,19 +24,19 @@ margin_right = 480.0
 margin_bottom = 720.0
 color = Color( 0.341176, 0.321569, 0.235294, 1 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="VM symbols logo" type="Sprite" parent="Background"]
-position = Vector2( 241, 202 )
+position = Vector2( 240, 159 )
+scale = Vector2( 0.650709, 0.650709 )
 texture = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -76, 75 )
 
 [node name="MobTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.75
 
 [node name="SaleTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -44,7 +44,7 @@ wait_time = 2.0
 [node name="ScoreTimer" type="Timer" parent="."]
 
 [node name="StartTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 4.0
 one_shot = true
 
 [node name="StartPosition" type="Position2D" parent="."]
@@ -59,7 +59,7 @@ curve = SubResource( 1 )
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -10.0
+volume_db = -5.0
 
 [node name="ThemeSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

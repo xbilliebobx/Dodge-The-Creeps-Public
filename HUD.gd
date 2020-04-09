@@ -2,16 +2,22 @@ extends CanvasLayer
 
 signal start_game
 
+func _ready() -> void:
+	$ScoreLabel.hide()
+
+func show_label():
+	$ScoreLabel.show()
+
 func show_message(text):
 	$MessageLabel.text = text
 	$MessageLabel.show()
 	$MessageTimer.start()
 
 func game_over():
-	show_message("Game Over")
+	show_message("You lost\nyour mental")
 	yield($MessageTimer, "timeout")
 	$StartButton.show()
-	$MessageLabel.text = "Dodge the\nCreeps"
+	$MessageLabel.text = "Morning\nmeeting\nis over!"
 	$MessageLabel.show()
 
 func update_score(score):
