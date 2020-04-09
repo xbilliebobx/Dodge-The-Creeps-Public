@@ -1,6 +1,7 @@
 extends Area2D
 
 signal hit
+signal point
 
 export (int) var SPEED
 var velocity = Vector2()
@@ -43,13 +44,22 @@ func _process(delta: float) -> void:
 		$AnimatedSprite.flip_v = velocity.y > 0
 
 
-func _on_Player_body_entered(_body) -> void:
+func _on_Player_body_entered(body) -> void:
+	if "Mob" in body.get_name():
 		hide()
 		emit_signal("hit")
 		call_deferred("set_monitoring", false)
+		print("mob hit") 
+		print(body.get_name())
+	elif "Sale" in body.get_name():
+		emit_signal("point")
+		body.captured()
+		print("tag captured") 
+		print(body.get_name())
+	else:
+		print(body.get_name())
 
 func start(pos):
 	position = pos
 	show()
 	monitoring = true
-	#monitorable testen

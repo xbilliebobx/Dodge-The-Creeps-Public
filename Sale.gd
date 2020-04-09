@@ -6,5 +6,5 @@ export (int) var MAX_SPEED
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
-func _on_Sale_body_exited(_body) -> void:
-	hide()
+func captured() -> void:
+	queue_free()

@@ -65,8 +65,8 @@ volume_db = -10.0
 stream = ExtResource( 7 )
 volume_db = -10.0
 [connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="point" from="Player" to="." method="tag_captured"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="SaleTimer" to="." method="_on_SaleTimer_timeout"]
-[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]

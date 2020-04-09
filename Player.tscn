@@ -46,6 +46,7 @@ color_ramp = SubResource( 4 )
 
 [node name="Player" type="Area2D"]
 position = Vector2( 204, 186 )
+collision_layer = 2
 script = ExtResource( 5 )
 SPEED = 400
 

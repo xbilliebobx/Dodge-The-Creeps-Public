@@ -28,9 +28,14 @@ func _on_StartTimer_timeout() -> void:
 	$ScoreTimer.start()
 	$SaleTimer.start()
 
-func _on_ScoreTimer_timeout() -> void:
+func tag_captured():
 	score += 1
 	$HUD.update_score(score)
+
+#func _on_ScoreTimer_timeout() -> void:
+#	score += 1
+#	$HUD.update_score(score)
+# ScoreTimer tijdelijk link heb ik gedisconnect vanwege errors, zolang code niet gebruikt wordt.
 
 func _on_MobTimer_timeout() -> void:
 	$MobPath/MobSpawnLocation.set_offset(randi())
