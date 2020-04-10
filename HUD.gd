@@ -4,9 +4,15 @@ signal start_game
 
 func _ready() -> void:
 	$ScoreLabel.hide()
+	$MobLabel.hide()
+	$ScoreTag.hide()
+	$ScoreMob.hide()
 
-func show_label():
+func show_labels():
 	$ScoreLabel.show()
+	$MobLabel.show()
+	$ScoreTag.show()
+	$ScoreMob.show()
 
 func show_message(text):
 	$MessageLabel.text = text

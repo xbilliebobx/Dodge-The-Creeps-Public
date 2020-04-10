@@ -10,13 +10,13 @@ func _ready() -> void:
 
 func new_game():
 	score = 0
-	mobscore = 0
-	$Player.start($StartPosition.position)
-	$StartTimer.start()
-	$HUD.show_message("5 seconds\nto the field!")
 	$HUD.update_score(score)
+	mobscore = 0
 	$HUD.update_mobscore(mobscore)
+	$Player.start($StartPosition.position)
+	$HUD.show_message("5 seconds\nto the field!")
 	$ThemeSong.play()
+	$StartTimer.start()
 
 func game_over() -> void:
 	$ScoreTimer.stop()
@@ -38,7 +38,7 @@ func tag_captured():
 #func _on_ScoreTimer_timeout() -> void:
 #	score += 1
 #	$HUD.update_score(score)
-# ScoreTimer tijdelijk link heb ik gedisconnect vanwege errors, zolang code niet gebruikt wordt.
+# ScoreTimer link heb ik tijdelijk gedisconnect vanwege errors, zolang code niet gebruikt wordt.
 
 func _on_MobTimer_timeout() -> void:
 	$MobPath/MobSpawnLocation.set_offset(randi())
