@@ -39,7 +39,7 @@ position = Vector2( -76, 75 )
 wait_time = 0.75
 
 [node name="SaleTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 
 [node name="ScoreTimer" type="Timer" parent="."]
 

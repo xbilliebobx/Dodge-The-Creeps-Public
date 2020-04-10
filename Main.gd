@@ -3,16 +3,19 @@ extends Node2D
 export (PackedScene) var Mob
 export (PackedScene) var Sale
 var score
+var mobscore
 
 func _ready() -> void:
 	randomize()
 
 func new_game():
 	score = 0
+	mobscore = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
 	$HUD.show_message("5 seconds\nto the field!")
 	$HUD.update_score(score)
+	$HUD.update_mobscore(mobscore)
 	$ThemeSong.play()
 
 func game_over() -> void:
@@ -46,7 +49,9 @@ func _on_MobTimer_timeout() -> void:
 	direction += rand_range(PI/4, PI*3/4)
 	mob.rotation = direction
 	mob.set_linear_velocity(Vector2(rand_range(mob.MIN_SPEED, mob.MAX_SPEED),0).rotated(direction))
-
+	mobscore += 1
+	$HUD.update_mobscore(mobscore)
+	
 func _on_SaleTimer_timeout() -> void:
 	$MobPath/MobSpawnLocation.set_offset(randi())
 	var sale = Sale.instance()
